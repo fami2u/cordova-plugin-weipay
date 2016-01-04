@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+    <plugin id="com.fami2u.plugins" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+        <name>weipayPlugin</name>
+        <js-module name="weipayPlugin" src="www/weipayPlugin.js">
+            <clobbers target="weipayPlugin" />
+        </js-module>
+        <platform name="ios">
+            <config-file parent="/*" target="config.xml">
+                <feature name="weipayPlugin">
+                    <param name="ios-package" value="weipayPlugin" />
+                </feature>
+            </config-file>
+            <source-file src="src/ios/weipayPlugin.m" />
+        </platform>
+        <platform name="android">
+            <config-file parent="/*" target="res/xml/config.xml">
+                <feature name="weipayPlugin">
+                    <param name="android-package" value="com.fami2u.plugins.weipayPlugin" />
+                </feature>
+            </config-file>
+            <config-file parent="/*" target="AndroidManifest.xml"></config-file>
+            <source-file src="src/android/weipayPlugin.java" target-dir="src/com/fami2u/plugins/weipayPlugin" />
+        </platform>
+    </plugin>
