@@ -1,6 +1,7 @@
 /********* weipayPlugin.m Cordova Plugin Implementation *******/
 
 #import <Cordova/CDV.h>
+<<<<<<< HEAD
 #import "getIPhoneIP.h"
 #import "DataMD5.h"
 #import "XMLDictionary.h"
@@ -17,10 +18,19 @@
 
 - (void)pay:(CDVInvokedUrlCommand*)command;
 
+=======
+
+@interface weipayPlugin : CDVPlugin {
+  // Member variables go here.
+}
+
+- (void)pay:(CDVInvokedUrlCommand*)command;
+>>>>>>> 9d0f0c65f3212a65c732fc50e1aca830da9e3d15
 @end
 
 @implementation weipayPlugin
 
+<<<<<<< HEAD
 -(void)pluginInitialize{
     CDVViewController *viewController = (CDVViewController *)self.viewController;
     self.partner = [viewController.settings objectForKey:@"app_id"];
@@ -161,4 +171,20 @@
 }
 
 
+=======
+- (void)pay:(CDVInvokedUrlCommand*)command
+{
+    CDVPluginResult* pluginResult = nil;
+    NSString* echo = [command.arguments objectAtIndex:0];
+
+    if (echo != nil && [echo length] > 0) {
+        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:echo];
+    } else {
+        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
+    }
+
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+}
+
+>>>>>>> 9d0f0c65f3212a65c732fc50e1aca830da9e3d15
 @end

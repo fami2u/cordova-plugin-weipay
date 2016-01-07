@@ -6,6 +6,7 @@
         </js-module>
         <platform name="ios">
             <config-file parent="/*" target="config.xml">
+<<<<<<< HEAD
                 <preference name="app_id" value="$app_id" />
                 <preference name="seller" value="$seller" />
                 <preference name="private_key" value="$private" />
@@ -62,6 +63,12 @@
             <source-file src="src/ios/implement/XMLDictionary/XMLDictionary.m" />
             <header-file src="src/ios/weixinSDK/WXApi.h" />
             <header-file src="src/ios/weixinSDK/WXApiObject.h" />
+=======
+                <feature name="weipayPlugin">
+                    <param name="ios-package" value="weipayPlugin" />
+                </feature>
+            </config-file>
+>>>>>>> 9d0f0c65f3212a65c732fc50e1aca830da9e3d15
             <source-file src="src/ios/weipayPlugin.m" />
         </platform>
         <platform name="android">
