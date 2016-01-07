@@ -1,0 +1,25 @@
+//
+//  PrefixHeader.pch
+//  weixinPayTest
+//
+//  Created by 1 on 15/12/25.
+//  Copyright © 2015年 fami2u.com. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+//appid
+#define APP_ID @"wx5200aa4eacd5a4d7"
+//商户号
+#define MCH_ID @"1297904301"
+//key
+#define API_KEY @"7ae3ed4ff3fd3bb3dd13122dc06652f1"
+
+
+#define ORDER_PAY_NOTIFICATION @"pay--notfication"
+
+#endif /* PrefixHeader_pch */

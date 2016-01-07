@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='utf-8'?>
+    <plugin id="com.fami2u.plugins" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+        <name>weipayPlugin</name>
+        <js-module name="weipayPlugin" src="www/weipayPlugin.js">
+            <clobbers target="weipayPlugin" />
+        </js-module>
+        <platform name="ios">
+            <config-file parent="/*" target="config.xml">
+                <preference name="app_id" value="$app_id" />
+                <preference name="seller" value="$seller" />
+                <preference name="private_key" value="$private" />
+                <feature name="weipayPlugin">
+                    <param name="ios-package" value="weipayPlugin" />
+                    <param name="onload" value="true" />
+                </feature>
+            </config-file>
+            <config-file target="*-Info.plist" parent="CFBundleURLTypes">
+                <array>
+                    <dict>
+                        <key>CFBundleURLTypes</key>
+                        <array>
+                            <dict>
+                                <key>CFBundleURLSchemes</key>
+                                <array>
+                                    <string>famitest</string>
+                                </array>
+                            </dict>
+                        </array>
+                    </dict>
+                </array>
+            </config-file>
+            <framework src="SystemConfiguration.framework" weak="true" />
+            <framework src="CoreTelephony.framework" weak="true" />
+            <framework src="Security.framework" weak="true" />
+            <framework src="AssetsLibrary.framework" weak="true" />
+            <framework src="CoreGraphics.framework" weak="true" />
+            <framework src="MobileCoreServices.framework" weak="true" />
+            <header-file src="src/ios/implement/AFNetworking/AFHTTPRequestOperation.h" />
+            <source-file src="src/ios/implement/AFNetworking/AFHTTPRequestOperation.m" />
+            <header-file src="src/ios/implement/AFNetworking/AFHTTPRequestOperationManager.h" />
+            <source-file src="src/ios/implement/AFNetworking/AFHTTPRequestOperationManager.m" />
+            <header-file src="src/ios/implement/AFNetworking/AFHTTPSessionManager.h" />
+            <source-file src="src/ios/implement/AFNetworking/AFHTTPSessionManager.m" />
+            <header-file src="src/ios/implement/AFNetworking/AFNetworking.h" />
+            <header-file src="src/ios/implement/AFNetworking/AFNetworkReachabilityManager.h" />
+            <source-file src="src/ios/implement/AFNetworking/AFNetworkReachabilityManager.m" />
+            <header-file src="src/ios/implement/AFNetworking/AFSecurityPolicy.h" />
+            <source-file src="src/ios/implement/AFNetworking/AFSecurityPolicy.m" />
+            <header-file src="src/ios/implement/AFNetworking/AFURLConnectionOperation.h" />
+            <source-file src="src/ios/implement/AFNetworking/AFURLConnectionOperation.m" />
+            <header-file src="src/ios/implement/AFNetworking/AFURLRequestSerialization.h" />
+            <source-file src="src/ios/implement/AFNetworking/AFURLRequestSerialization.m" />
+            <header-file src="src/ios/implement/AFNetworking/AFURLResponseSerialization.h" />
+            <source-file src="src/ios/implement/AFNetworking/AFURLResponseSerialization.m" />
+            <header-file src="src/ios/implement/AFNetworking/AFURLSessionManager.h" />
+            <source-file src="src/ios/implement/AFNetworking/AFURLSessionManager.m" />
+            <header-file src="src/ios/implement/DataMD5.h" />
+            <source-file src="src/ios/implement/DataMD5.m" />
+            <header-file src="src/ios/implement/GetIP/getIPhoneIP.h" />
+            <source-file src="src/ios/implement/GetIP/getIPhoneIP.m" />
+            <header-file src="src/ios/implement/XMLDictionary/XMLDictionary.h" />
+            <source-file src="src/ios/implement/XMLDictionary/XMLDictionary.m" />
+            <header-file src="src/ios/weixinSDK/WXApi.h" />
+            <header-file src="src/ios/weixinSDK/WXApiObject.h" />
+            <source-file src="src/ios/weipayPlugin.m" />
+        </platform>
+        <platform name="android">
+            <config-file parent="/*" target="res/xml/config.xml">
+                <feature name="weipayPlugin">
+                    <param name="android-package" value="com.fami2u.plugins.weipayPlugin" />
+                </feature>
+            </config-file>
+            <config-file parent="/*" target="AndroidManifest.xml"></config-file>
+            <source-file src="src/android/weipayPlugin.java" target-dir="src/com/fami2u/plugins/weipayPlugin" />
+        </platform>
+    </plugin>
