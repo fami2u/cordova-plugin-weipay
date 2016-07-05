@@ -8,3 +8,5 @@ cordova,plugin,weipay.
         [WXApi registerApp:$APP_id withDescription:$];
         
         }
+#####更多插件请点击：[fami2u](https://github.com/fami2u)
+#####关于我们：[FAMI](http://fami2u.com)
